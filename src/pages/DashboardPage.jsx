@@ -4,7 +4,7 @@ import StatCard from '../components/StatCard'
 import ChartsSection from '../components/ChartsSection'
 import ForecastChart from '../components/ForecastChart'
 import NavBar from '../components/NavBar'
-import '../styles/dashboard.css'
+import '../styles/Dashboard.css'
 
 
 // small ET estimator function (same logic as ForecastChart uses)
