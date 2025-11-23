@@ -1,0 +1,176 @@
+/* ====== Global Theme ====== */
+:root {
+  --bg: #f4f7f5;
+  --surface: #ffffff;
+  --surface-glass: rgba(255, 255, 255, 0.9);
+  --text-dark: #1a1a1a;
+  --text-light: #555;
+  --accent: #4caf50;
+  --accent-dark: #3b8d41;
+  --shadow: 0 10px 25px rgba(0,0,0,0.07);
+  --radius: 20px;
+  --card-radius: 20px;
+  --font: "Inter", system-ui, sans-serif;
+}
+
+body, .app {
+  margin: 0;
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text-dark);
+  min-height: 100vh;
+}
+
+/* ====== NAVBAR ====== */
+.navbar {
+  background: linear-gradient(90deg, #4caf50, #66bb6a);
+  color: white;
+  padding: 18px 28px;
+  font-size: 20px;
+  font-weight: 600;
+  box-shadow: var(--shadow);
+}
+
+/* ====== HEADER ====== */
+.header {
+  padding: 32px 28px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header h1 {
+  font-size: 36px;
+  margin: 0;
+  font-weight: 700;
+}
+.subtitle {
+  font-size: 16px;
+  opacity: 0.65;
+  margin-top: 6px;
+}
+
+/* ====== CONTROLS (Backend + Status) ====== */
+.controls {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.connection {
+  padding: 8px 14px;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 14px;
+  border: 1px solid transparent;
+}
+.connection.connected {
+  background: #e9f7ec;
+  color: var(--accent-dark);
+  border-color: #a9ddb4;
+}
+.connection.disconnected {
+  background: #ffe5e5;
+  color: #d64545;
+  border-color: #e7b1b1;
+}
+.connection.connecting {
+  background: #fff3d1;
+  color: #8a6d00;
+  border-color: #e1c76a;
+}
+
+/* ====== Backend URL Input ====== */
+.server-input input {
+  padding: 8px 10px;
+  border-radius: var(--radius);
+  border: 1px solid #d0d0d0;
+  font-size: 14px;
+  min-width: 240px;
+}
+.server-input input:focus {
+  outline: 2px solid var(--accent);
+}
+
+/* ====== STAT CARDS GRID ====== */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  padding: 28px;
+}
+
+.stat-card {
+  background: var(--surface);
+  padding: 22px;
+  border-radius: var(--card-radius);
+  box-shadow: var(--shadow);
+  transition: transform .22s cubic-bezier(.25,.1,.25,1),
+              box-shadow .22s cubic-bezier(.25,.1,.25,1);
+}
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.10);
+}
+.card-header {
+  font-size: 15px;
+  font-weight: 600;
+  opacity: 0.7;
+  margin-bottom: 8px;
+}
+.stat-card div.value {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--accent-dark);
+}
+
+/* ====== CHARTS & SECTIONS ====== */
+.charts, .forecast-section {
+  padding: 32px 28px;
+}
+.charts canvas, .forecast-section canvas {
+  background: var(--surface);
+  border-radius: var(--card-radius);
+  box-shadow: var(--shadow);
+  padding: 20px;
+}
+
+/* ====== FOOTER ====== */
+.footer {
+  text-align: center;
+  padding: 22px;
+  font-size: 14px;
+  opacity: 0.6;
+  margin-top: 20px;
+}
+
+/* ====== EMPTY STATE ====== */
+.empty {
+  padding: 30px;
+  font-size: 16px;
+  text-align: center;
+  opacity: 0.6;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 720px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+  .controls {
+    justify-content: center;
+  }
+}
+/* PAGE CONTAINER */
+.page-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0 24px;   /* or 0 if you want edge-to-edge */
+}
+
+/* Reset any weird margins */
+html, body { margin: 0; padding: 0; }
+
+
